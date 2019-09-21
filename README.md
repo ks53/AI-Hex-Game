@@ -1,7 +1,7 @@
 # AI-Hex-Game
-Allows the user to play the board game Hex ( https://en.wikipedia.org/wiki/Hex_(board_game) ) against an artificial intelligence opponent.
+Written in C++ .
 
-Written in C++
+Allows the user to play the board game Hex ( https://en.wikipedia.org/wiki/Hex_(board_game) ) against an artificial intelligence opponent.
 
 AI opponent uses monte carlo simulation to calculate win/trials ratio for every possible move on the board and chooses the move with highest likelihood to win.
 
