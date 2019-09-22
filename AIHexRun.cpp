@@ -380,31 +380,31 @@ public:
 		int end = (size*size)-1;
 		unsigned seed1 = std::chrono::high_resolution_clock::now().time_since_epoch().count();
 		mt19937 generator(seed1);
-    	uniform_int_distribution<int> distribution(0, end); // define the range
+		uniform_int_distribution<int> distribution(0, end); // define the range
 
-    	int remaining = (size * size) - filledSpotsCounter -1;
-    	int current;
-    	while(remaining > 0)
-    	{
-    		current = distribution(generator);
+		int remaining = (size * size) - filledSpotsCounter -1;
+		int current;
+		while(remaining > 0)
+		{
+			current = distribution(generator);
 
-    		while(filledSpots[current] != "" || taken[current] == true)
-    		{
-    			current = distribution(generator);
-    		}
-    		linearNodes[current].color = currentColor;
-    		taken[current] = true;
-    		if(currentColor == "Blue")
-    		{
-    			currentColor = "Red";
-    		}
-    		else
-    		{
-    			currentColor = "Blue";
-    		}
+			while(filledSpots[current] != "" || taken[current] == true)
+			{
+				current = distribution(generator);
+			}
+			linearNodes[current].color = currentColor;
+			taken[current] = true;
+			if(currentColor == "Blue")
+			{
+				currentColor = "Red";
+			}
+			else
+			{
+				currentColor = "Blue";
+			}
 
-    		remaining--;
-    	}
+			remaining--;
+		}
 
 	}
 
